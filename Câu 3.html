@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course List</title>
+    <style>
+        .course{
+            border: 1px solid #2f63ff;
+            padding: 15px;
+            margin: 10px;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div id="course-container"></div>
+    <script>
+        const courses = [
+            {
+                name: "Beginner English",
+                description: "Learn basic vocabulary and grammar.",
+                fee: "2,000,000 VND",
+                startDate: "2025-06-01"
+            },
+            {
+                name: "Intermediate English",
+                description: "Improve your speaking and writing skills.",
+                fee: "3,000,000 VND",
+                startDate: "2025-06-15"
+            },
+            {
+                name: "Advanced English",
+                description: "Master complex grammar and fluency.",
+                fee: "4,000,000 VND",
+                startDate: "2025-07-01"
+            },
+            {
+                name: "Business English",
+                description: "English for professional settings.",
+                fee: "3,500,000 VND",
+                startDate: "2025-07-15"
+            }
+        ];
+        let i=0;
+        const container = document.getElementById('course-container');
+        while (i < courses.length) {
+            const course = courses[i];
+            const div = document.createElement('div');
+            div.className = 'course';
+            div.innerHTML = `
+                <h3>${course.name}</h3>
+                <p>${course.description}</p>
+                <p><strong>Fee:</strong> ${course.fee}</p>
+                <p><strong>Start Date:</strong> ${course.startDate}</p>
+            `;
+            container.appendChild(div);
+            i++;
+        }
+    </script>
+</body>
+</html>
